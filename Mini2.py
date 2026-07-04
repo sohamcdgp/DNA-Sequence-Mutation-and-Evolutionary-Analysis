@@ -1,13 +1,14 @@
-import dic
-print("Evolutionary Sequence Simulation and Comparative Analysis System")
-###Gene name
+
+print("DNA-Sequence-Mutation-and-Evolutionary-Analysis")
+##Gene:- BRCA1, Organism:- Homo Sapiens, GeneID=672, chromosome=17
 b=""
-def read_dna():
-    
-   
+def read_dna():   
+    '''
+    Opens the FASTA file in reading mode,
+    converts it into a string and returns it
+    '''
     a = open("gene.fna.txt",'r')
     text = a.read()
-
     global b
     for ch in text:
         if ch in ("A","T","G","C"):
@@ -105,17 +106,23 @@ def cGC():
 
 protein =[]
 def translate_dna(b):
+    '''
+    Translates the DNA into protein
+    then returns it.
+    '''
     for i in range(0,len(b)-2,3):       
         amino_acid=dic[b[i:i+3]]
         protein.append(amino_acid)
     print("Protein Synthesized")
     
-    command =input("Type yes to see the protein sequence: ")
-    if(command=="yes"):
         return protein
     
 translate_dna(b)
 def mutate_dna():
+    '''
+    induces point mutations at random positions at the DNA strings
+    returns new string.
+    '''
     global b
     import random
     bases = ['A', 'T', 'G', 'C']
@@ -129,23 +136,27 @@ def mutate_dna():
         b = b[:pos] + new_base + b[pos + 1:]
     print("After random point mutations:")
     print("Mutated DNA:")
-    command =input("Type yes to see the mutated DNA sequence: ")
-    if(command=="yes"):
+
         return b
 mutate_dna()
 new_protein = []
 def mutated_protein():
+    '''
+    Translates the mutated DNA into protein 
+    and then returns it.
+    '''
     for i in range(0,len(b)-3,3):
         amino_acid=dic[b[i:i+3]]
         new_protein.append(amino_acid)
     print("Mutated protein synthesized")
-    command =input("Type yes to see the mutated protein sequence: ")
-    if(command=="yes"):
        return new_protein
 mutated_protein()
 
 
 def Compare():
+    '''Compares the amino acid sequences across the two proteins
+    and then returns the total number of common amino acids and percentage similarity between the two sequences
+    '''
     common_AA = 0
 
     for i in range(0, min(len(protein), len(new_protein))):
