@@ -14,6 +14,7 @@ def read_dna():
         if ch in ("A","T","G","C"):
             b = b + ch 
     return(b)   
+    return len(b)     ###Length of Original DNA
 
 read_dna()
 dic = {
@@ -82,6 +83,7 @@ dic = {
     "GGA":"Gly",
     "GGG":"Gly"
 }
+
 def cGC():
     '''
     Calculates the DNA GC content of your file 
@@ -116,7 +118,7 @@ def translate_dna(b):
     print("Protein Synthesized")
     
         return protein
-    
+        return len(protein)         ##Length of the Translated Protein 
 translate_dna(b)
 def mutate_dna():
     '''
@@ -138,6 +140,7 @@ def mutate_dna():
     print("Mutated DNA:")
 
         return b
+        return len(b)        ###Length of mutated DNA
 mutate_dna()
 new_protein = []
 def mutated_protein():
@@ -150,8 +153,8 @@ def mutated_protein():
         new_protein.append(amino_acid)
     print("Mutated protein synthesized")
        return new_protein
+       return len(new_protein)          ###Length of mutated protein
 mutated_protein()
-
 
 def Compare():
     '''Compares the amino acid sequences across the two proteins
