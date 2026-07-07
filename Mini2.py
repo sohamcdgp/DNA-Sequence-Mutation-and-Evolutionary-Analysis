@@ -2,7 +2,7 @@
 print("DNA-Sequence-Mutation-and-Evolutionary-Analysis")
 ##Gene:- BRCA1, Organism:- Homo Sapiens, GeneID=672, chromosome=17
 b=""
-def read_dna():   
+def read_dna():  
     '''
     Opens the FASTA file in reading mode,
     converts it into a string and returns it
