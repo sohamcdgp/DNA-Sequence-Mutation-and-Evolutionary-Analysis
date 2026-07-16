@@ -1,13 +1,13 @@
-
 print("DNA-Sequence-Mutation-and-Evolutionary-Analysis")
 ##Gene:- BRCA1, Organism:- Homo Sapiens, GeneID=672, chromosome=17
+a= open("Data/gene.fna.txt","r")
 b=""
 def read_dna():  
     '''
     Opens the FASTA file in reading mode,
-    converts it into a string and returns it
+    converts it into a string and returns it.
     '''
-    a = open("gene.fna.txt",'r')
+
     text = a.read()
     global b
     for ch in text:
@@ -17,73 +17,7 @@ def read_dna():
     return len(b)     ###Length of Original DNA
 
 read_dna()
-dic = {
-    "TTT" : "Phe",
-    "TTC" : "Phe",
-    "TTA" : "Phe",
-    "TTG" : "Phe",
-    "CTT" : "Leu",
-    "CTC" : "Leu",
-    "CTA" : "Leu",
-    "CTG" : "Leu",
-    "ATT" : "Ile",
-    "ATC" : "Ile",
-    "ATA" : "Ile",
-    "ATG" : "Met",
-    "GTT" : "Val",
-    "GTC" : "Val",
-    "GTA" : "Val",
-    "GTG" : "Val",
-    "TCT":"Ser",
-    "TCC":"Ser",
-    "TCA":"Ser",
-    "TCG":"Ser",
-    "CCT":"Pro",
-    "CCC":"Pro",
-    "CCA":"Pro",
-    "CCG":"Pro",
-    "ACT":"Thr",
-    "ACC":"Thr",
-    "ACA":"Thr",
-    "ACG":"Thr",
-    "GCT":"Ala",
-    "GCC":"Ala",
-    "GCA":"Ala",
-    "GCG":"Ala",
-    "TAT":"Tyr",
-    "TAC":"Tyr",
-    "TAA":"Stop",
-    "TAG":"Stop",
-    "CAT":"His",
-    "CAC":"His",
-    "CAA":"Gln",
-    "CAG":"Gln",
-    "AAT":"Asn",
-    "AAC":"Asn",
-    "AAA":"Lys",
-    "AAG":"Lys",
-    "GAT":"Asp",
-    "GAC":"Asp",
-    "GAA":"Glu",
-    "GAG":"Glu",
-    "TGT":"Cys",
-    "TGC":"Cys",
-    "TGA":"Stop",
-    "TGG":"Trp",
-    "CGT":"Arg",
-    "CGC":"Arg",
-    "CGA":"Arg",
-    "CGG":"Arg",
-    "AGT":"Ser",
-    "AGC":"Ser",
-    "AGA":"Arg",
-    "AGG":"Arg",
-    "GGT":"Gly",
-    "GGC":"Gly",
-    "GGA":"Gly",
-    "GGG":"Gly"
-}
-
+import Protein_Dictionary as pd
 def cGC():
     '''
     Calculates the DNA GC content of your file 
@@ -112,13 +46,14 @@ def translate_dna(b):
     Translates the DNA into protein
     then returns it.
     '''
+
     for i in range(0,len(b)-2,3):       
-        amino_acid=dic[b[i:i+3]]
+        amino_acid=pd.dic[b[i:i+3]]
         protein.append(amino_acid)
     print("Protein Synthesized")
     
-        return protein
-        return len(protein)         ##Length of the Translated Protein 
+    return protein
+    return len(protein)         ##Length of the Translated Protein 
 translate_dna(b)
 def mutate_dna():
     '''
@@ -139,8 +74,8 @@ def mutate_dna():
     print("After random point mutations:")
     print("Mutated DNA:")
 
-        return b
-        return len(b)        ###Length of mutated DNA
+    return b
+    return len(b)        ###Length of mutated DNA
 mutate_dna()
 new_protein = []
 def mutated_protein():
@@ -149,11 +84,11 @@ def mutated_protein():
     and then returns it.
     '''
     for i in range(0,len(b)-3,3):
-        amino_acid=dic[b[i:i+3]]
+        amino_acid=pd.dic[b[i:i+3]]
         new_protein.append(amino_acid)
     print("Mutated protein synthesized")
-       return new_protein
-       return len(new_protein)          ###Length of mutated protein
+    return new_protein
+    return len(new_protein)          ###Length of mutated protein
 mutated_protein()
 
 def Compare():
