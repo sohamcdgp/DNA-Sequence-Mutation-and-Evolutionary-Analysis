@@ -1,33 +1,20 @@
-print("DNA-Sequence-Mutation-and-Evolutionary-Analysis")
+print("---------------------------------------------------------------------------------------------")
+print("Mutation-Analysis".center(80))
+print("---------------------------------------------------------------------------------------------")
 ##Gene:- BRCA1, Organism:- Homo Sapiens, GeneID=672, chromosome=17
-a= open("Data/gene.fna.txt","r")
+
 b=""
-def read_dna():  
-    '''
-    Opens the FASTA file in reading mode,
-    converts it into a string and returns it.
-    '''
-
-    text = a.read()
-    global b
-    for ch in text:
-        if ch in ("A","T","G","C"):
-            b = b + ch 
-    return(b)   
-    return len(b)     ###Length of Original DNA
-
-read_dna()
+ 
+a= open("Data/gene.fna.txt","r")
+text = a.read()
+for ch in text:
+    if ch in ("A","T","G","C"):
+        b = b + ch 
+print("Length of the DNA sequence is:",len(b))
+   
 import Protein_Dictionary as pd
-def cGC():
-    '''
-    Calculates the DNA GC content of your file 
-    Loops through each individual nucleotide in the file, and for each nucleotide it adds it's pre-existing count by one. 
-    Finally, it calculates the percentage of GC in the DNA, 
-    then the length of the entire DNA.
-    '''
-    
-    count_A=count_T=count_G=count_C = 0
-    for nucleotide in b:
+count_A=count_T=count_G=count_C = 0
+for nucleotide in b:
             if(nucleotide == 'A' ):
              count_A = count_A+1
             elif(nucleotide== 'T' ): 
@@ -36,24 +23,21 @@ def cGC():
                 count_G = count_G+1
             else: 
                 count_C = count_C+1            
-    GC_content = ((count_G + count_C)/(count_C + count_G+ count_A+count_T))  * 100
-    return count_A+count_T+count_G+count_C, GC_content
+GC_content = ((count_G + count_C)/(count_C + count_G+ count_A+count_T))  * 100
+AT_content = ((count_A + count_T)/(count_C + count_G+ count_A+count_T))  * 100
+
+print("Total AT content is: ",AT_content,"%")
+print("Total GC content is: ",GC_content,"%")
 
 
 protein =[]
-def translate_dna(b):
-    '''
-    Translates the DNA into protein
-    then returns it.
-    '''
 
-    for i in range(0,len(b)-2,3):       
+
+for i in range(0,len(b)-2,3):       
         amino_acid=pd.dic[b[i:i+3]]
         protein.append(amino_acid)
-    print("Protein Synthesized")
-    
-    return protein
-    return len(protein)         ##Length of the Translated Protein 
+print("Protein Synthesized")
+print("len(protein)         ##Length of the Translated Protein 
 translate_dna(b)
 def mutate_dna():
     '''
