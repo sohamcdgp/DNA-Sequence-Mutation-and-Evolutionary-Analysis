@@ -32,58 +32,41 @@ print("Total GC content is: ",GC_content,"%")
 
 protein =[]
 
+print("---------------------------------------------------------------------------------------------")
 
 for i in range(0,len(b)-2,3):       
         amino_acid=pd.dic[b[i:i+3]]
         protein.append(amino_acid)
 print("Protein Synthesized")
-print("len(protein)         ##Length of the Translated Protein 
-translate_dna(b)
-def mutate_dna():
-    '''
-    induces point mutations at random positions at the DNA strings
-    returns new string.
-    '''
-    global b
-    import random
-    bases = ['A', 'T', 'G', 'C']
-    num_mutations = 250
-    for i in range(num_mutations):
+print("The length of protein is: ",len(protein))         ##Length of the Translated Protein 
+
+import random
+bases = ['A', 'T', 'G', 'C']
+num_mutations = 250
+for i in range(num_mutations):
         pos = random.randint(0, len(b) - 1)
         current_base = b[pos]
         possible_bases = bases.copy()
         possible_bases.remove(current_base)
         new_base = random.choice(possible_bases)
         b = b[:pos] + new_base + b[pos + 1:]
-    print("After random point mutations:")
-    print("Mutated DNA:")
+print("---------------------------------------------------------------------------------------------")
 
-    return b
-    return len(b)        ###Length of mutated DNA
-mutate_dna()
+print("After random point mutations:")
+print("Length of mutated DNA is: ",len(b))
 new_protein = []
-def mutated_protein():
-    '''
-    Translates the mutated DNA into protein 
-    and then returns it.
-    '''
-    for i in range(0,len(b)-3,3):
+for i in range(0,len(b)-3,3):
         amino_acid=pd.dic[b[i:i+3]]
         new_protein.append(amino_acid)
-    print("Mutated protein synthesized")
-    return new_protein
-    return len(new_protein)          ###Length of mutated protein
-mutated_protein()
+print("Mutated protein synthesized")
 
-def Compare():
-    '''Compares the amino acid sequences across the two proteins
-    and then returns the total number of common amino acids and percentage similarity between the two sequences
-    '''
-    common_AA = 0
+print("Length of mutated protein is:",len(new_protein))          
 
-    for i in range(0, min(len(protein), len(new_protein))):
+common_AA = 0
+
+for i in range(0, min(len(protein), len(new_protein))):
         if protein[i] == new_protein[i]:
             common_AA += 1
-    per_cent = (common_AA/len(protein))*100 
-    return common_AA,per_cent
-Compare()
+per_cent = (common_AA/len(protein))*100 
+print("Total number of common amino acids:",common_AA)
+print("Percentage of Common Amino Acids is:",per_cent)
