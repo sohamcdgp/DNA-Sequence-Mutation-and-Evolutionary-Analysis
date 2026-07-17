@@ -11,7 +11,21 @@ This project provides a simple yet comprehensive platform to perform fundamental
 ### 1. GC Content Analysis
 - Calculates the percentage of guanine (G) and cytosine (C) nucleotides in the DNA sequence
 - **Formula:** (G count + C count) / Total length × 100
-- 
-### 1. AT Content Analysis
+  
+### 2. AT Content Analysis
 - Calculates the percentage of adenine (A) and thymine (T) nucleotides in the DNA sequence
 - **Formula:** (A count + T count) / Total length × 100
+
+### 3. DNA to Protein Translation
+- Translates DNA sequences into protein sequences using the complete genetic code
+- Maps all codons to their corresponding amino acids
+- Processes the sequence in triplet codons (5' → 3')
+- Returns protein length
+
+- ### 4. Point Mutation Generation
+- Induces point mutations at random sites in DNA.
+- Total number of mutations: 250
+
+
+
+
