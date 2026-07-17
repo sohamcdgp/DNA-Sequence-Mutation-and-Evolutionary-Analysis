@@ -22,7 +22,7 @@ This project provides a simple yet comprehensive platform to perform fundamental
 - Processes the sequence in triplet codons (5' → 3')
 - Returns protein length
 
-- ### 4. Point Mutation Generation
+ ### 4. Point Mutation Generation
 - Induces point mutations at random sites in DNA.
 - Total number of mutations: 250
 
