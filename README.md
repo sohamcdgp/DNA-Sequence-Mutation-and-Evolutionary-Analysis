@@ -1,4 +1,3 @@
-# DNA Sequence Mutation and Evolutionary Analysis
-Author- Soham Chakraborty
+#DNA-Mutation-Analysis-Toolkit
 
-<br>Bioinformatics Project<br>
+A web-based bioinformatics toolkit for analyzing DNA sequences, calculating GC content, translating DNA to protein, inducing random point mutations, and comparing protein sequences to study evolutionary changes.
