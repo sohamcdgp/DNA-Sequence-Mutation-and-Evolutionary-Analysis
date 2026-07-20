@@ -2,9 +2,9 @@ print("-------------------------------------------------------------------------
 print("DNA-Mutation-Analysis".center(84))
 print("---------------------------------------------------------------------------------------------")
 ##Gene:- BRCA1, Organism:- Homo Sapiens, GeneID=672, chromosome=17
-
+                                                    
 b=""
- 
+
 a= open("Data/gene.fna.txt","r")
 text = a.read()
 for ch in text:
@@ -59,7 +59,6 @@ for i in range(0,len(b)-3,3):
         amino_acid=pd.dic[b[i:i+3]]
         new_protein.append(amino_acid)
 print("Mutated protein synthesized")
-
 print("Length of mutated protein is:",len(new_protein))          
 
 common_AA = 0
@@ -68,5 +67,7 @@ for i in range(0, min(len(protein), len(new_protein))):
         if protein[i] == new_protein[i]:
             common_AA += 1
 per_cent = (common_AA/len(protein))*100 
+print("---------------------------------------------------------------------------------------------")
 print("Total number of common amino acids:",common_AA)
 print("Percentage of Common Amino Acids is:",per_cent)
+print("---------------------------------------------------------------------------------------------")
