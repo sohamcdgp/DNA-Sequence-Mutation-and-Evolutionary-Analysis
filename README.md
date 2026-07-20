@@ -26,6 +26,12 @@ This project provides a simple yet comprehensive platform to perform fundamental
 - Induces point mutations at random sites in DNA.
 - Total number of mutations: 250
 
-
+### 5. Protein Sequence Comparison
+- Compares original and mutated protein sequences
+- Counts matching amino acids at corresponding positions
+- Calculates similarity percentage
+- Displays comparison metrics:
+  - Number of matching amino acids
+  - Similarity percentage
 
 
